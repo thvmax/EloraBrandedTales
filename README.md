@@ -86,3 +86,4 @@ Brand palette:
 - `--bg` `#0a0a0a`
 - `--pink` `#ff2d6e` (the accent)
 - `--text` `#ffffff`
+# EloraBrandedTales

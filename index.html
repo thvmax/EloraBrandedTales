@@ -1,0 +1,1099 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Elora — Creative Portfolio · Aspiring Brand Enthusiast</title>
+<meta name="description" content="Creative portfolio of Elora — a brand enthusiast and creative-oriented account professional with over 4 years of experience in UAE." />
+<link rel="icon" type="image/png" href="images/image2.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@300;400;500;600;700;800&family=Archivo+Black&display=swap" rel="stylesheet" />
+
+<style>
+  :root{
+    --bg:        #0a0a0a;
+    --bg-soft:   #141414;
+    --bg-card:   #161616;
+    --pink:      #ff2d6e;
+    --pink-soft: #ff6b96;
+    --text:      #ffffff;
+    --muted:     #a1a1a1;
+    --line:      rgba(255,255,255,.08);
+    --line-pink: rgba(255,45,110,.35);
+    --maxw:      1280px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Manrope',system-ui,-apple-system,sans-serif;
+    font-weight:400;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  ul{list-style:none}
+
+  /* ——— layout ——— */
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px}
+  @media (max-width:640px){.wrap{padding:0 20px}}
+
+  .display{
+    font-family:'Anton','Archivo Black',sans-serif;
+    font-weight:400;
+    letter-spacing:-.01em;
+    line-height:.92;
+    text-transform:uppercase;
+  }
+  .eyebrow{
+    font-family:'Manrope',sans-serif;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--pink);
+  }
+
+  /* ——— top nav ——— */
+  header.nav{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    background:rgba(10,10,10,.72);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 32px;max-width:var(--maxw);margin:0 auto;
+  }
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.14em;font-size:13px;text-transform:uppercase}
+  .brand .dot{width:12px;height:12px;background:var(--pink);display:inline-block}
+  nav.primary ul{display:flex;gap:30px}
+  nav.primary li{margin-left:30px} /* fallback for engines without flex gap */
+  nav.primary li:first-child{margin-left:0}
+  nav.primary a{font-size:13px;font-weight:600;letter-spacing:.06em;color:var(--muted);transition:color .2s}
+  nav.primary a:hover{color:var(--pink)}
+  @media (max-width:860px){nav.primary{display:none}}
+
+  /* ——— hero ——— */
+  .hero{
+    padding:140px 0 80px;
+    border-bottom:1px solid var(--line);
+    position:relative;overflow:hidden;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(600px 300px at 90% 10%, rgba(255,45,110,.12), transparent 60%),
+      radial-gradient(400px 240px at 10% 80%, rgba(255,45,110,.05), transparent 60%);
+    pointer-events:none;
+  }
+  .hero-grid{
+    display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;position:relative;z-index:1;
+  }
+  .hero-kicker{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+  .hero-kicker span{color:var(--pink);font-weight:700;letter-spacing:.2em;font-size:12px;text-transform:uppercase}
+  .hero-kicker .bar{height:1px;width:60px;background:var(--pink)}
+  .hero h1{
+    font-size:clamp(68px,9.5vw,156px);
+    margin-bottom:18px;
+  }
+  .hero h1 .pink{color:var(--pink)}
+  .hero .tagline{
+    color:var(--pink);
+    font-weight:800;
+    letter-spacing:.16em;
+    font-size:clamp(14px,1.4vw,18px);
+    text-transform:uppercase;
+    margin-bottom:40px;
+  }
+  .hero-traits{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:46px}
+  .trait{
+    border:1px solid var(--line);
+    padding:10px 16px;border-radius:999px;
+    font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+    color:#e8e8e8;
+  }
+  .trait .pdot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--pink);margin-right:8px;vertical-align:middle}
+  .hero-stars{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:560px}
+  .skill{border-top:1px solid var(--line);padding-top:14px}
+  .skill .stars{color:var(--pink);font-size:14px;letter-spacing:2px;margin-bottom:8px}
+  .skill .stars .empty{color:#3a3a3a}
+  .skill-label{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#e8e8e8}
+
+  .hero-visual{
+    position:relative;
+    aspect-ratio:9/10;
+    background:
+      radial-gradient(ellipse at 30% 20%, #ff6b96 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 80%, #ff2d6e 0%, transparent 55%),
+      linear-gradient(135deg,#ff2d6e 0%,#ff4a85 55%,#ff6b96 100%);
+    border-radius:6px;
+    overflow:hidden;
+    box-shadow:0 40px 80px -40px rgba(255,45,110,.5);
+  }
+  .hero-visual::before{
+    content:"";position:absolute;inset:0;
+    background-image:
+      repeating-linear-gradient(125deg, rgba(255,255,255,.13) 0 2px, transparent 2px 52px),
+      repeating-linear-gradient(55deg,  rgba(255,255,255,.09) 0 2px, transparent 2px 52px);
+    mix-blend-mode:overlay;
+  }
+  .hero-visual::after{
+    content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(circle at 50% 110%, rgba(0,0,0,.35), transparent 55%);
+  }
+  .hero-visual .badge{
+    position:absolute;top:26px;left:26px;z-index:3;
+    background:#0a0a0a;color:#fff;font-size:10px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;padding:9px 16px;border-radius:999px;
+    border:1px solid var(--pink);
+  }
+  .hero-visual .hv-num{
+    position:absolute;left:28px;bottom:28px;z-index:3;
+    font-family:'Anton',sans-serif;font-size:120px;line-height:.85;color:#0a0a0a;letter-spacing:-.02em;
+    mix-blend-mode:multiply;opacity:.85;
+  }
+  .hero-visual .hv-word{
+    position:absolute;right:28px;top:50%;transform:translateY(-50%) rotate(-90deg);transform-origin:right center;z-index:3;
+    font-size:11px;font-weight:800;letter-spacing:.36em;text-transform:uppercase;color:#0a0a0a;
+    white-space:nowrap;
+  }
+  .hero-visual .star{
+    position:absolute;top:42px;right:42px;z-index:3;
+    width:46px;height:46px;
+    background:#fff;
+    clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);
+    filter:drop-shadow(0 4px 12px rgba(0,0,0,.35));
+  }
+  .hero-visual .orbit{
+    position:absolute;inset:16% 22% 16% 22%;z-index:2;
+    border:1.5px solid rgba(10,10,10,.4);
+    border-radius:50%;
+    transform:rotate(-20deg);
+  }
+  @media (max-width:860px){
+    .hero{padding:110px 0 60px}
+    .hero-grid{grid-template-columns:1fr;gap:40px}
+    .hero-visual{max-width:460px;margin:0 auto;width:100%}
+    .hero-stars{max-width:100%}
+  }
+  @media (max-width:520px){
+    .hero-stars{grid-template-columns:repeat(2,1fr)}
+  }
+
+  /* ——— generic section ——— */
+  section{padding:110px 0;position:relative}
+  section + section{border-top:1px solid var(--line)}
+  .sec-head{display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:end;margin-bottom:60px}
+  .sec-num{
+    font-family:'Anton',sans-serif;
+    font-size:22px;color:var(--pink);letter-spacing:.06em;
+  }
+  .sec-title{font-size:clamp(44px,6.6vw,96px)}
+  .sec-sub{color:var(--muted);max-width:620px;font-size:15px;margin-top:18px}
+  @media (max-width:720px){
+    section{padding:80px 0}
+    .sec-head{grid-template-columns:1fr;gap:14px;margin-bottom:44px}
+  }
+
+  /* ——— about ——— */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+  .about-text{font-size:clamp(18px,2vw,24px);line-height:1.55;color:#e8e8e8}
+  .about-text strong{color:var(--pink);font-weight:800}
+  .about-visual{
+    aspect-ratio:1/1;max-width:460px;margin-left:auto;width:100%;
+    position:relative;
+    display:flex;align-items:center;justify-content:center;
+    background:
+      radial-gradient(circle at 30% 30%, rgba(255,45,110,.18), transparent 60%),
+      #111;
+    border:1px solid var(--line);
+    border-radius:6px;
+    overflow:hidden;
+  }
+  .about-visual img{width:68%;height:auto;filter:drop-shadow(0 20px 40px rgba(0,0,0,.6))}
+  .about-visual .sparkles{position:absolute;top:20px;left:20px;width:90px;opacity:.95}
+  @media (max-width:860px){
+    .about-grid{grid-template-columns:1fr;gap:40px}
+    .about-visual{margin:0 auto}
+  }
+
+  /* ——— experience timeline ——— */
+  .timeline{position:relative;padding-left:40px}
+  .timeline::before{content:"";position:absolute;left:8px;top:10px;bottom:10px;width:1px;background:var(--line)}
+  .job{position:relative;padding:24px 0 40px;display:grid;grid-template-columns:1fr auto;gap:16px 40px;border-bottom:1px solid var(--line)}
+  .job:last-child{border-bottom:0}
+  .job::before{
+    content:"";position:absolute;left:-36px;top:32px;width:14px;height:14px;
+    background:var(--pink);
+    clip-path:polygon(0 0,100% 50%,0 100%);
+  }
+  .job-role{font-family:'Anton',sans-serif;font-size:clamp(26px,3vw,40px);text-transform:uppercase;letter-spacing:.01em;line-height:1}
+  .job-company{color:var(--pink);font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin-top:10px}
+  .job-date{color:var(--muted);font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;padding-top:8px}
+  .job-desc{grid-column:1/-1;color:#cfcfcf;font-size:15px;max-width:780px}
+  @media (max-width:640px){
+    .timeline{padding-left:26px}
+    .job::before{left:-22px;top:28px}
+    .job-date{grid-column:1/-1;padding-top:0}
+  }
+
+  /* ——— role block (employer section) ——— */
+  .role-block{display:grid;grid-template-columns:300px 1fr;gap:60px;margin-bottom:70px}
+  .role-meta .role-badge{
+    display:inline-block;background:var(--pink);color:#0a0a0a;font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;padding:6px 10px;border-radius:2px;margin-bottom:16px
+  }
+  .role-meta h3{font-family:'Anton',sans-serif;font-size:36px;text-transform:uppercase;line-height:1;margin-bottom:10px}
+  .role-meta .role-date{color:var(--muted);font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+  .skills-list{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+  .skills-list li{
+    border:1px solid var(--line);
+    background:#111;
+    padding:16px 18px;
+    border-radius:6px;
+    font-size:14px;
+    font-weight:600;
+    display:flex;gap:12px;align-items:flex-start;
+    transition:border-color .2s,transform .2s;
+  }
+  .skills-list li:hover{border-color:var(--line-pink);transform:translateY(-2px)}
+  .skills-list li::before{content:"";flex:0 0 auto;width:7px;height:7px;border-radius:50%;background:var(--pink);margin-top:8px}
+  @media (max-width:860px){
+    .role-block{grid-template-columns:1fr;gap:30px}
+    .skills-list{grid-template-columns:1fr}
+  }
+
+  /* ——— brand / logo grid ——— */
+  .brands-title{font-family:'Manrope';font-size:13px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin:50px 0 22px}
+  .brand-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px}
+  .brand-card{
+    aspect-ratio:1/1;
+    background:#fff;border-radius:10px;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
+    padding:22px;
+    transition:transform .25s;
+    overflow:hidden;
+    position:relative;
+  }
+  .brand-card img{max-width:70%;max-height:56%;object-fit:contain}
+  .brand-card .brand-label{
+    font-size:9px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#111;
+    text-align:center;
+  }
+  .brand-card.dark{background:#181818;border:1px solid var(--line)}
+  .brand-card.dark .brand-label{color:#fff}
+  .brand-card:hover{transform:translateY(-4px)}
+
+  /* round brand (Pocket Yoma / Non-Yoma style) */
+  .brand-round{
+    aspect-ratio:1/1;
+    background:transparent;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;
+    padding:10px;
+  }
+  .brand-round .circle{
+    width:80%;aspect-ratio:1/1;border-radius:50%;background:#fff;
+    display:flex;align-items:center;justify-content:center;padding:18%;
+    overflow:hidden;
+  }
+  .brand-round .circle img{width:100%;height:100%;object-fit:contain}
+  .brand-round .brand-label{font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#fff;text-align:center}
+
+  /* ——— campaign (featured case) ——— */
+  .campaign{
+    display:grid;grid-template-columns:1fr 1.1fr;gap:50px;
+    padding:50px 0;
+    border-top:1px solid var(--line);
+  }
+  .campaign:first-of-type{border-top:0;padding-top:30px}
+  .campaign-text .eyebrow{margin-bottom:14px}
+  .campaign-text h3{font-family:'Anton',sans-serif;font-size:clamp(38px,5.2vw,72px);text-transform:uppercase;line-height:.95;margin-bottom:10px}
+  .campaign-text .subtitle{color:var(--pink);font-size:14px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;margin-bottom:30px}
+  .campaign-block{margin-bottom:24px}
+  .campaign-block h4{font-size:14px;font-weight:800;text-transform:uppercase;letter-spacing:.14em;margin-bottom:10px;color:#fff}
+  .campaign-block h4::before{content:"—  ";color:var(--pink)}
+  .campaign-block ul li{color:#cfcfcf;font-size:14.5px;padding:5px 0;padding-left:18px;position:relative}
+  .campaign-block ul li::before{content:"";position:absolute;left:0;top:12px;width:8px;height:1px;background:var(--pink)}
+  .campaign-block p{color:#cfcfcf;font-size:14.5px}
+
+  .campaign-media{display:grid;gap:16px}
+  .media-heading{font-size:12px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+  .tile-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .tile-row.two{grid-template-columns:repeat(2,1fr)}
+  .tile{
+    position:relative;border-radius:6px;overflow:hidden;background:#111;border:1px solid var(--line);
+    aspect-ratio:9/16;
+    display:block;
+    transition:transform .25s,border-color .25s;
+  }
+  .tile.square{aspect-ratio:1/1}
+  .tile.portrait{aspect-ratio:3/4}
+  .tile img{width:100%;height:100%;object-fit:cover}
+  .tile:hover{transform:translateY(-4px);border-color:var(--line-pink)}
+  a.tile::after{
+    content:"→ Watch";
+    position:absolute;inset:auto 0 0 0;padding:8px 10px;
+    font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+    background:linear-gradient(transparent,rgba(0,0,0,.85));
+    color:var(--pink);
+  }
+  a.tile.link-post::after{content:"→ View post"}
+  a.tile.link-video::after{content:"→ Watch video"}
+  a.tile.link-tiktok::after{content:"→ TikTok"}
+  a.tile.link-linkedin::after{content:"→ LinkedIn"}
+  a.tile.link-facebook::after{content:"→ Facebook"}
+
+  .ext-link{
+    display:inline-flex;align-items:center;gap:10px;margin-top:16px;
+    font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--pink);
+    border-bottom:1px solid var(--line-pink);padding-bottom:4px;transition:color .2s,border-color .2s;
+  }
+  .ext-link:hover{color:#fff;border-color:#fff}
+  .ext-link::after{content:"↗"}
+
+  @media (max-width:860px){
+    .campaign{grid-template-columns:1fr;gap:30px;padding:40px 0}
+    .tile-row{grid-template-columns:repeat(3,1fr)}
+    .tile-row.two{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:520px){
+    .tile-row{grid-template-columns:repeat(2,1fr)}
+    .tile-row.two{grid-template-columns:1fr}
+  }
+
+  /* ——— content gallery (Pocket website + IG) ——— */
+  .gallery{display:grid;grid-template-columns:2fr 1fr;gap:24px;margin-top:30px}
+  .gallery .cell{background:#111;border:1px solid var(--line);border-radius:6px;overflow:hidden;padding:14px}
+  .gallery .cell-title{font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+  .gallery .tri{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+  .gallery .tri img{aspect-ratio:3/4;object-fit:cover;border-radius:4px}
+  .gallery .big img{width:100%;border-radius:4px}
+  @media (max-width:860px){.gallery{grid-template-columns:1fr}}
+
+  /* ——— event / tvc blocks ——— */
+  .col3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  @media (max-width:860px){.col3{grid-template-columns:1fr}}
+  .event{background:#111;border:1px solid var(--line);border-radius:6px;overflow:hidden;transition:border-color .2s,transform .2s}
+  .event:hover{border-color:var(--line-pink);transform:translateY(-4px)}
+  .event img{aspect-ratio:16/11;object-fit:cover;width:100%}
+  .event .meta{padding:16px 18px 20px}
+  .event .meta h4{font-size:13px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;margin-bottom:6px}
+  .event .meta p{color:var(--muted);font-size:13px}
+
+  /* ——— footer (thank you) ——— */
+  footer.end{
+    padding:140px 0 100px;
+    text-align:center;
+    position:relative;overflow:hidden;
+    border-top:1px solid var(--line);
+  }
+  footer.end::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(700px 400px at 50% 40%, rgba(255,45,110,.12), transparent 60%);
+    pointer-events:none;
+  }
+  footer.end .orbit{
+    position:relative;display:inline-block;
+    padding:50px 80px;
+  }
+  footer.end .orbit::before{
+    content:"";position:absolute;inset:0;
+    border:1px solid rgba(255,255,255,.35);
+    border-radius:50%;
+    transform:rotate(-14deg) scale(1.1,.9);
+  }
+  footer.end .orbit-label{
+    position:absolute;top:-8px;left:50%;transform:translateX(-50%) rotate(-8deg);
+    font-size:11px;font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:#fff;
+    background:#0a0a0a;padding:0 14px;
+  }
+  footer.end h2{font-size:clamp(70px,13vw,180px);line-height:.9;position:relative}
+  footer.end .sub{color:var(--pink);font-weight:800;letter-spacing:.2em;font-size:clamp(14px,1.4vw,18px);text-transform:uppercase;margin-top:18px;position:relative}
+  footer.end .star{
+    position:absolute;right:8%;bottom:-20px;width:48px;height:48px;background:#fff;
+    clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);
+  }
+  footer.end .legal{
+    margin-top:70px;color:var(--muted);font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;
+    position:relative;
+  }
+  footer.end .legal a{color:var(--pink)}
+
+  /* ——— entrance animation (CSS-only, no JS dependency) ——— */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: none; }
+  }
+  .reveal {
+    animation: fadeUp .7s cubic-bezier(.2,.7,.2,1) both;
+  }
+  /* stagger — each sibling .reveal in the same parent delays slightly */
+  .reveal:nth-of-type(2) { animation-delay: .08s; }
+  .reveal:nth-of-type(3) { animation-delay: .16s; }
+  .reveal:nth-of-type(4) { animation-delay: .24s; }
+  .reveal:nth-of-type(5) { animation-delay: .32s; }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { animation: none; }
+  }
+
+  ::selection{background:var(--pink);color:#0a0a0a}
+</style>
+</head>
+<body>
+
+<!-- ———————————— NAV ———————————— -->
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top"><span class="dot"></span> Elora Portfolio</a>
+    <nav class="primary">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#reportage">Reportage</a></li>
+        <li><a href="#poke">Poke Studio</a></li>
+        <li><a href="#blink">Blink Agency</a></li>
+        <li><a href="#pocket">Pocket MM</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- ———————————— HERO ———————————— -->
+<section id="top" class="hero">
+  <div class="wrap hero-grid">
+    <div class="reveal">
+      <div class="hero-kicker"><span class="bar"></span><span>2023 — 2024 · Working Experience</span></div>
+      <h1 class="display">Working<br/><span class="pink">Experience</span></h1>
+      <div class="tagline">Aspiring Brand Enthusiast</div>
+
+      <div class="hero-traits">
+        <span class="trait"><span class="pdot"></span>Creative</span>
+        <span class="trait"><span class="pdot"></span>Ambitious</span>
+        <span class="trait"><span class="pdot"></span>Passionate</span>
+        <span class="trait"><span class="pdot"></span>Good Team Player</span>
+      </div>
+
+      <div class="hero-stars">
+        <div class="skill">
+          <div class="stars">★★★★<span class="empty">★</span></div>
+          <div class="skill-label">Creative Thinking</div>
+        </div>
+        <div class="skill">
+          <div class="stars">★★★<span class="empty">★★</span></div>
+          <div class="skill-label">Brand Management</div>
+        </div>
+        <div class="skill">
+          <div class="stars">★★★<span class="empty">★★</span></div>
+          <div class="skill-label">Brand & Marketing<br/>Communication</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal">
+      <span class="badge">Creative Portfolio</span>
+      <div class="orbit"></div>
+      <span class="hv-word">Aspiring · Brand · Enthusiast</span>
+      <div class="star"></div>
+      <span class="hv-num">'24<br/>'25</span>
+    </div>
+  </div>
+</section>
+
+<!-- ———————————— ABOUT ———————————— -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num">01 / 06</div>
+      <div>
+        <h2 class="display sec-title">About <span style="color:var(--pink)">Me</span></h2>
+      </div>
+    </div>
+    <div class="about-grid reveal">
+      <p class="about-text">
+        As a <strong>brand enthusiast</strong> and creative-oriented account professional with over <strong>4 years of experience</strong> in corporate and marketing agency environments based in <strong>UAE</strong>, I'm passionate about blending creativity with analytical thinking and have strongly contributed to client communication and digital platforms.
+      </p>
+      <div class="about-visual">
+        <img src="images/image2.png" alt="" class="sparkles" />
+        <img src="images/image3.png" alt="Megaphone" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ———————————— WORKING EXPERIENCE (timeline) ———————————— -->
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num">02 / 06</div>
+      <div>
+        <h2 class="display sec-title">Working <span style="color:var(--pink)">Experience</span></h2>
+        <p class="sec-sub">Four years across three creative agencies and one digital platform — the people, the brands, the campaigns that shaped the craft.</p>
+      </div>
+    </div>
+
+    <div class="timeline reveal">
+
+      <div class="job">
+        <div>
+          <div class="job-role">Social Media Executive</div>
+          <div class="job-company">Reportage Group</div>
+        </div>
+        <div class="job-date">Jun 2025 — Present</div>
+        <p class="job-desc">Social media management, Social Media Strategy and Guideline for both HQ UAE and international market (Europe, Azerbaijan, UK, Africa). Dive in-depth into social media reporting and performance analysis across platforms to inform strategy and optimization.</p>
+      </div>
+
+      <div class="job">
+        <div>
+          <div class="job-role">Social Media Manager</div>
+          <div class="job-company">Poke.Creative Studio</div>
+        </div>
+        <div class="job-date">Aug 2024 — Apr 2025</div>
+        <p class="job-desc">Managed the social media content strategy for various brands — from F&B to clothing and digital platforms. Responsible as Assistant Strategist and Project Manager for end-to-end campaign management through to results-driven reporting.</p>
+      </div>
+
+      <div class="job">
+        <div>
+          <div class="job-role">Account Executive</div>
+          <div class="job-company">BLINK Marketing Agency</div>
+        </div>
+        <div class="job-date">Oct 2023 — Aug 2024</div>
+        <p class="job-desc">Collaborated closely with the creative and strategic teams to develop successful campaigns for brands such as Rakuten Viber, BAWDAR Beer, Asia Pacific Automaker Corporation and more.</p>
+      </div>
+
+      <div class="job">
+        <div>
+          <div class="job-role">Junior Content Writer</div>
+          <div class="job-company">Pocket MM</div>
+        </div>
+        <div class="job-date">Jan 2023 — Oct 2023</div>
+        <p class="job-desc">Developed content strategies for LinkedIn, Instagram, and website newsletters. Collaborated monthly with Yoma Entities and Non-Yoma Merchants on Pocket Campaigns and Digital Plans, ensuring goals were met through effective communication.</p>
+      </div>
+
+      <div class="job">
+        <div>
+          <div class="job-role">Online Marketing Intern</div>
+          <div class="job-company">Pocket MM</div>
+        </div>
+        <div class="job-date">Oct 2022 — Jan 2023</div>
+        <p class="job-desc">Assisted marketing projects in the early stages of Pocket, including content creation and crafting brand key messages, in collaboration with the Marketing Team.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ———————————— REPORTAGE GROUP ———————————— -->
+<section id="reportage">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num">03 / 06</div>
+      <div>
+        <h2 class="display sec-title">Reportage <span style="color:var(--pink)">Group</span></h2>
+        <p class="sec-sub">Current role · Social Media Executive for the UAE HQ and international markets across Europe, Azerbaijan, the UK and Africa.</p>
+      </div>
+    </div>
+
+    <div class="role-block reveal">
+      <div class="role-meta">
+        <span class="role-badge">Now</span>
+        <h3>Social Media<br/>Executive</h3>
+        <div class="role-date">Jun 2025 — Present · UAE</div>
+      </div>
+      <ul class="skills-list">
+        <li>Social Media Strategy and Management</li>
+        <li>Multi Media Content Creation</li>
+        <li>Brand Communication Strategy</li>
+        <li>Instagram & Youtube Boosting Strategy</li>
+        <li>Performance Analysis and KPIs Achievement</li>
+        <li>Photoshoot & Videoshoot Ideation</li>
+      </ul>
+    </div>
+
+    <div class="reveal">
+      <div class="brands-title">Brands Under Management</div>
+      <div class="brand-grid">
+        <div class="brand-card dark"><img src="images/image8.png" alt="Reportage Group" /><div class="brand-label">Reportage Group</div></div>
+        <div class="brand-card"><img src="images/image5.png" alt="Aythaya Wine" /><div class="brand-label">Aythaya Wine</div></div>
+        <div class="brand-card dark"><img src="images/image9.png" alt="Reportage Africa" /><div class="brand-label">Reportage Africa</div></div>
+        <div class="brand-card"><img src="images/image6.jpeg" alt="Printing Bee" /><div class="brand-label">Printing Bee</div></div>
+        <div class="brand-card"><img src="images/image7.png" alt="Burman Barbershop" /><div class="brand-label">Burman Barbershop</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ———————————— POKE CREATIVE STUDIO ———————————— -->
+<section id="poke">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num">04 / 06</div>
+      <div>
+        <h2 class="display sec-title">Poke.<span style="color:var(--pink)">Creative Studio</span></h2>
+        <p class="sec-sub">Social Media Manager · End-to-end campaign management across F&B, lifestyle and consumer brands. Full-stack strategy, content, ideation and reporting.</p>
+      </div>
+    </div>
+
+    <div class="role-block reveal">
+      <div class="role-meta">
+        <span class="role-badge">Aug 2024 → Apr 2025</span>
+        <h3>Social Media<br/>Manager</h3>
+        <div class="role-date">Assistant Strategist & PM</div>
+      </div>
+      <ul class="skills-list">
+        <li>Social Media Management</li>
+        <li>Assistant Communication Strategist</li>
+        <li>IMC Account Management & Strategy</li>
+        <li>Marketing Campaigns Management</li>
+        <li>Photoshoot & Videoshoot Ideation</li>
+        <li>Influencer Management</li>
+        <li>Retainer Brand Management & Communication</li>
+      </ul>
+    </div>
+
+    <div class="reveal">
+      <div class="brands-title">Main Brands</div>
+      <div class="brand-grid">
+        <div class="brand-card"><img src="images/image11.png" alt="Rangoon Tea House" /><div class="brand-label">Rangoon Tea House</div></div>
+        <div class="brand-card"><img src="images/image5.png" alt="Aythaya Wine" style="background:transparent" /><div class="brand-label">Aythaya Wine</div></div>
+        <div class="brand-card"><img src="images/image12.jpeg" alt="Lumos Myanmar" /><div class="brand-label">Lumos Myanmar</div></div>
+        <div class="brand-card"><img src="images/image7.png" alt="Burman Barbershop" /><div class="brand-label">Burman Barbershop</div></div>
+        <div class="brand-card"><img src="images/image6.jpeg" alt="Printing Bee" /><div class="brand-label">Printing Bee</div></div>
+      </div>
+    </div>
+
+    <!-- Rangoon Tea House -->
+    <div class="campaign reveal">
+      <div class="campaign-text">
+        <div class="eyebrow">Featured Campaign · 01</div>
+        <h3>Rangoon<br/>Tea House</h3>
+        <div class="subtitle">10th Anniversary Campaign</div>
+
+        <div class="campaign-block">
+          <h4>Big Idea & Campaign Execution</h4>
+          <ul>
+            <li>Initiated the campaign's big idea and developed it with the team</li>
+            <li>Offered nostalgic tea house feelings combined with a decade-long celebration of a well-established brand</li>
+            <li>Executed marketing touchpoints aligned with real campaign prompts</li>
+            <li>Led campaign content creation, including the founder's interview session</li>
+          </ul>
+        </div>
+
+        <div class="campaign-block">
+          <h4>Achievements</h4>
+          <ul>
+            <li>Increased brand visibility by <strong style="color:#fff">70%</strong> across all social media platforms, especially TikTok</li>
+            <li>Poke.Studio was offered further campaign proposals as a result of this campaign's success</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="campaign-media">
+        <div class="media-heading">Viral Contents</div>
+        <div class="tile-row">
+          <a class="tile link-tiktok" target="_blank" rel="noopener" href="https://www.tiktok.com/@rangoonteahouse/video/7440166455204678913?is_from_webapp=1&sender_device=pc&web_id=7506072633123030536">
+            <img src="images/image13.png" alt="10th Year Rangoon Tea House viral content" />
+          </a>
+          <a class="tile link-tiktok" target="_blank" rel="noopener" href="https://www.tiktok.com/@rangoonteahouse/video/7443041529842650386?is_from_webapp=1&sender_device=pc&web_id=7506072633123030536">
+            <img src="images/image14.png" alt="10 Years Rangoon Tea House interview" />
+          </a>
+          <a class="tile link-tiktok" target="_blank" rel="noopener" href="https://www.tiktok.com/@rangoonteahouse/video/7442662547804671249?is_from_webapp=1&sender_device=pc&web_id=7506072633123030536">
+            <img src="images/image15.png" alt="Spin to Win Rangoon Tea House" />
+          </a>
+        </div>
+
+        <div class="media-heading" style="margin-top:12px">Campaign Recaps</div>
+        <div class="tile-row two">
+          <a class="tile link-linkedin square" target="_blank" rel="noopener" href="https://www.linkedin.com/posts/poke-creativestudio_rth-10th-anniversary-campaign-by-poke-activity-7280795101277167616-kyce">
+            <img src="images/image16.png" alt="10th Year recap" />
+          </a>
+          <a class="tile link-linkedin square" target="_blank" rel="noopener" href="https://www.linkedin.com/posts/poke-creativestudio_campaign-marketingcampaign-rangoonteahouse-activity-7282605238543437824-DM1a">
+            <img src="images/image17.png" alt="Campaign analytics" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Rene Mattias -->
+    <div class="campaign reveal">
+      <div class="campaign-text">
+        <div class="eyebrow">Featured Campaign · 02</div>
+        <h3>René<br/>Mattias</h3>
+        <div class="subtitle">Short Film · Teaser — Ongoing</div>
+
+        <div class="campaign-block">
+          <h4>Big Idea & Execution</h4>
+          <ul>
+            <li>Out-of-the-box TV commercial — ideated a short film concept to deliver a storytelling impact to the audience</li>
+            <li>Responsible as assistant strategist and collaborated with third-party production teams during the execution stage</li>
+            <li>Influencer Management</li>
+          </ul>
+        </div>
+
+        <div class="campaign-block">
+          <h4>Achievements</h4>
+          <ul>
+            <li>Increased brand visibility by <strong style="color:#fff">35%</strong> across all social media platforms, especially TikTok — since the series is ongoing</li>
+          </ul>
+        </div>
+
+        <a class="ext-link" target="_blank" rel="noopener" href="https://www.facebook.com/share/v/15tAbJgYzR/">Watch the teaser</a>
+      </div>
+
+      <div class="campaign-media">
+        <div class="media-heading">Teaser — Ongoing</div>
+        <a class="tile link-facebook portrait" target="_blank" rel="noopener" href="https://www.facebook.com/share/v/15tAbJgYzR/" style="aspect-ratio:3/4">
+          <img src="images/image18.png" alt="René Mattias Short Film Teaser" />
+        </a>
+      </div>
+    </div>
+
+    <!-- Geon Bae Soju -->
+    <div class="campaign reveal">
+      <div class="campaign-text">
+        <div class="eyebrow">Featured Campaign · 03</div>
+        <h3>Geon<br/>Bae Soju</h3>
+        <div class="subtitle">Brand Launch — Photoshoot Campaign</div>
+
+        <div class="campaign-block">
+          <h4>Big Idea & Execution</h4>
+          <ul>
+            <li>Developed the big idea for the "First Crush, First Sip" campaign for Geon-Bae Myanmar</li>
+            <li>Collaborated with the team on the moodboard for the photoshoot and stop-motion concept</li>
+            <li>Managed influencer coordination and communication</li>
+          </ul>
+        </div>
+
+        <div class="campaign-block">
+          <h4>Achievements</h4>
+          <ul>
+            <li>Increased brand visibility by <strong style="color:#fff">50%</strong> across online and OOH marketing materials</li>
+          </ul>
+        </div>
+
+        <a class="ext-link" target="_blank" rel="noopener" href="https://www.facebook.com/poke.creativestudio/posts/pfbid0WJYjNKGq62fGT5S4Gqmg4tFsSta4tkiUnQMjzYmCUnGENTRtvMrj2FZzYrYgvRaZl">View the post</a>
+      </div>
+
+      <div class="campaign-media">
+        <div class="media-heading">Teaser — Ongoing</div>
+        <a class="tile link-facebook portrait" target="_blank" rel="noopener" href="https://www.facebook.com/poke.creativestudio/posts/pfbid0WJYjNKGq62fGT5S4Gqmg4tFsSta4tkiUnQMjzYmCUnGENTRtvMrj2FZzYrYgvRaZl" style="aspect-ratio:3/4">
+          <img src="images/image19.png" alt="Geon Bae Soju launch campaign" />
+        </a>
+      </div>
+    </div>
+
+    <!-- Printing Bee Mascot -->
+    <div class="campaign reveal">
+      <div class="campaign-text">
+        <div class="eyebrow">Featured Project · 04</div>
+        <h3>Printing<br/>Bee</h3>
+        <div class="subtitle">Inflatable Mascot Execution</div>
+
+        <div class="campaign-block">
+          <h4>Execution</h4>
+          <p>Collaborated with an international inflatable mascot producer to deliver a high-quality mascot aligned with the brand guidelines — activated across trade-show and in-store environments.</p>
+        </div>
+      </div>
+
+      <div class="campaign-media">
+        <div class="media-heading">Inflatable Mascot</div>
+        <div class="tile" style="aspect-ratio:16/9">
+          <img src="images/image22.png" alt="Printing Bee mascot illustration" />
+        </div>
+        <div class="tile-row two">
+          <div class="tile square"><img src="images/image20.png" alt="Printing Bee mascot at expo" /></div>
+          <div class="tile square"><img src="images/image23.png" alt="Printing Bee mascot in use" /></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ———————————— BLINK MARKETING AGENCY ———————————— -->
+<section id="blink">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num">05 / 06</div>
+      <div>
+        <h2 class="display sec-title">Blink <span style="color:var(--pink)">Agency</span></h2>
+        <p class="sec-sub">Account Executive · Led IMC planning, retainer brand management and campaign strategy for FMCG and telecom clients.</p>
+      </div>
+    </div>
+
+    <div class="role-block reveal">
+      <div class="role-meta">
+        <span class="role-badge">Oct 2023 → Aug 2024</span>
+        <h3>Account<br/>Executive</h3>
+        <div class="role-date">IMC & Strategy</div>
+      </div>
+      <ul class="skills-list">
+        <li>IMC Account Management & Strategy</li>
+        <li>Brand Theme Song Amplification Plans</li>
+        <li>Social Media Content Planning & Design Thinking</li>
+        <li>Retainer Brand Management & Communication</li>
+      </ul>
+    </div>
+
+    <!-- Rakuten Viber -->
+    <div class="campaign reveal">
+      <div class="campaign-text">
+        <div class="eyebrow">Retainer · 2023 — 2024</div>
+        <h3>Rakuten<br/>Viber</h3>
+        <div class="subtitle">Connect With Confidence · Food Bazaar</div>
+
+        <div class="campaign-block">
+          <h4>Digital Communication</h4>
+          <ul>
+            <li>Managed the <strong style="color:#fff">monthly content calendar</strong> for specific Viber channels and Bot Management</li>
+            <li>Dealt with Food Merchants</li>
+            <li><strong style="color:#fff">KOL Management</strong> for Channel Growth</li>
+            <li>And upcoming plans</li>
+          </ul>
+        </div>
+
+        <div class="campaign-block">
+          <h4>Offline Communication</h4>
+          <ul>
+            <li><strong style="color:#fff">Food Bazaar Management</strong> — 20+ merchants and over 400+ footfalls</li>
+            <li>Assisted Event Management for "Connect with Confidence"</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="campaign-media">
+        <div class="media-heading">Connect With Confidence</div>
+        <div class="tile" style="aspect-ratio:16/9"><img src="images/image25.png" alt="Connect with Confidence event" /></div>
+        <div class="tile-row two">
+          <div>
+            <div class="media-heading" style="margin-bottom:8px">Food Bazaar</div>
+            <div class="tile portrait"><img src="images/image27.png" alt="Food Bazaar activation" /></div>
+          </div>
+          <div>
+            <div class="media-heading" style="margin-bottom:8px">Digital Communication</div>
+            <div class="tile portrait"><img src="images/image28.png" alt="Foodie Point digital content" /></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bawdar Beer -->
+    <div class="campaign reveal">
+      <div class="campaign-text">
+        <div class="eyebrow">IMC Account · 2023 — 2024</div>
+        <h3>Bawdar<br/>Beer</h3>
+        <div class="subtitle">Thematic Contents · Bawdar Yatwon</div>
+
+        <div class="campaign-block">
+          <h4>Digital Communication</h4>
+          <ul>
+            <li>Responsible for <strong style="color:#fff">Thematic and Campaign</strong> monthly content calendar and HML internal social posts</li>
+            <li>TikTok Content Strategy</li>
+            <li>Assisted strategy for the Whole IMC plan</li>
+            <li>Theme Song Amplification</li>
+          </ul>
+        </div>
+
+        <div class="campaign-block">
+          <h4>Offline Communication</h4>
+          <ul>
+            <li>Assisted Event Management for "BAWDAR YATWON MALL ACTIVATION"</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="campaign-media">
+        <div class="media-heading">Thematic Contents</div>
+        <div class="tile square"><img src="images/image30.png" alt="Bawdar thematic contents" /></div>
+        <div class="media-heading" style="margin-top:10px">Bawdar Yatwon Mall Activation</div>
+        <div class="tile" style="aspect-ratio:4/5"><img src="images/image31.png" alt="Bawdar Yatwon event" /></div>
+      </div>
+    </div>
+
+    <!-- Drink Smart Drive Safe -->
+    <div class="campaign reveal">
+      <div class="campaign-text">
+        <div class="eyebrow">Retainer · 2024</div>
+        <h3>Drink Smart,<br/>Drive Safe</h3>
+        <div class="subtitle">Digital Communication</div>
+
+        <div class="campaign-block">
+          <h4>Digital Communication</h4>
+          <ul>
+            <li>Key Account for <strong style="color:#fff">Page Growth Strategy</strong> within 6 months, including monthly reports</li>
+            <li>Managed the Monthly Content Calendars</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="campaign-media">
+        <div class="media-heading">Digital Communication</div>
+        <div class="tile-row two">
+          <div class="tile portrait"><img src="images/image32.png" alt="Drink Smart campaign" /></div>
+          <div class="tile portrait"><img src="images/image33.png" alt="Drink Smart thematic" /></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ———————————— POCKET MM ———————————— -->
+<section id="pocket">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num">06 / 06</div>
+      <div>
+        <h2 class="display sec-title">Pocket <span style="color:var(--pink)">MM</span></h2>
+        <p class="sec-sub">Junior Content Writer & Online Marketing Intern · The ground-zero of the craft — working with Yoma Entities, Non-Yoma Merchants, TVC production and live KOL activations.</p>
+      </div>
+    </div>
+
+    <div class="role-block reveal">
+      <div class="role-meta">
+        <span class="role-badge">Oct 2022 → Oct 2023</span>
+        <h3>Content &<br/>Marketing</h3>
+        <div class="role-date">Where it all started</div>
+      </div>
+      <ul class="skills-list">
+        <li>Communication with Yoma Entities</li>
+        <li>Communication with Non-Yoma Merchants</li>
+        <li>Content Creation</li>
+        <li>TVC & Activation</li>
+        <li>KOLs Management</li>
+      </ul>
+    </div>
+
+    <!-- Yoma Entities -->
+    <div class="reveal" style="margin-bottom:70px">
+      <div class="brands-title" style="margin-top:0">Communication with Yoma Entities</div>
+      <p style="color:#cfcfcf;font-size:15px;max-width:720px;margin-bottom:30px">
+        Primarily engaged with Yoma Entities on a monthly basis for Pocket Campaign and Digital Plan collaboration — aiming to hit every goal through effective communication and cooperation.
+      </p>
+      <div class="brand-grid">
+        <div class="brand-round"><div class="circle"><img src="images/image35.jpeg" alt="KFC Myanmar" /></div><div class="brand-label">KFC Myanmar</div></div>
+        <div class="brand-round"><div class="circle"><img src="images/image36.jpeg" alt="YKKO" /></div><div class="brand-label">YKKO</div></div>
+        <div class="brand-round"><div class="circle"><img src="images/image38.jpeg" alt="Memories Group" /></div><div class="brand-label">Memories Group</div></div>
+        <div class="brand-round"><div class="circle"><img src="images/image39.png" alt="Starcity" /></div><div class="brand-label">Starcity</div></div>
+        <div class="brand-round"><div class="circle"><img src="images/image37.png" alt="Pun Hlaing Hospital" /></div><div class="brand-label">Pun Hlaing Hospital</div></div>
+      </div>
+    </div>
+
+    <!-- Non-Yoma Merchants -->
+    <div class="reveal" style="margin-bottom:70px">
+      <div class="brands-title" style="margin-top:0">Communication with Non-Yoma Merchants</div>
+      <p style="color:#cfcfcf;font-size:15px;max-width:720px;margin-bottom:30px">
+        Handled content creation and communication with the Creative Design Team for Non-Yoma Merchants — monthly Pocket-related campaigns and coordination of reward collection.
+      </p>
+      <div class="brand-grid">
+        <div class="brand-round"><div class="circle"><img src="images/image40.png" alt="Ocha" /></div><div class="brand-label">Ocha</div></div>
+        <div class="brand-round"><div class="circle"><img src="images/image41.png" alt="Pizza Oro" /></div><div class="brand-label">Pizza Oro</div></div>
+        <div class="brand-round"><div class="circle"><img src="images/image42.png" alt="Cafe Dtwo" /></div><div class="brand-label">Cafe Dtwo</div></div>
+        <div class="brand-round"><div class="circle"><img src="images/image45.jpeg" alt="U K K Longyi" /></div><div class="brand-label">U K K Longyi</div></div>
+        <div class="brand-round"><div class="circle"><img src="images/image43.jpeg" alt="Hta Naung Coffee" /></div><div class="brand-label">Hta Naung Coffee</div></div>
+        <div class="brand-round"><div class="circle"><img src="images/image44.jpeg" alt="Bath & Kitchen" /></div><div class="brand-label">Bath & Kitchen</div></div>
+      </div>
+    </div>
+
+    <!-- Content Creation -->
+    <div class="reveal" style="margin-bottom:70px">
+      <div class="brands-title" style="margin-top:0">Content Creation</div>
+      <p style="color:#cfcfcf;font-size:15px;max-width:720px;margin-bottom:24px">
+        Primary role — crafting content strategy for LinkedIn and Instagram platforms. Additionally translated written content from the source language to English, tailored to Pocket's social platform requirements.
+      </p>
+
+      <div class="gallery">
+        <div class="cell">
+          <div class="cell-title">Pocket MM — Facebook, Instagram, LinkedIn</div>
+          <div class="tri">
+            <img src="images/image46.jpeg" alt="Cafe DTwo Pocket content" />
+            <img src="images/image47.jpeg" alt="Ocha Bubble Tea Pocket content" />
+            <img src="images/image48.jpeg" alt="Pocket Instagram feed" />
+          </div>
+        </div>
+        <div class="cell">
+          <div class="cell-title">Pocket MM Website — Myanmar & English</div>
+          <div class="big"><img src="images/image49.png" alt="Pocket MM website" /></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TVC & Activation -->
+    <div class="reveal" style="margin-bottom:70px">
+      <div class="brands-title" style="margin-top:0">TVC & Activation</div>
+      <p style="color:#cfcfcf;font-size:15px;max-width:720px;margin-bottom:24px">
+        Communication with the agency for TVC execution. Communications with Star City, YOMA Entity and Merchants.
+      </p>
+
+      <div class="col3">
+        <div class="event">
+          <img src="images/image50.jpeg" alt="Yoma Bank Seafarer Event" />
+          <div class="meta"><h4>Yoma Bank Seafarer</h4><p>Event activation & merchant coordination.</p></div>
+        </div>
+        <div class="event">
+          <img src="images/image51.jpeg" alt="Pocket TVC" />
+          <div class="meta"><h4>Pocket TVC</h4><p>Agency comms for TVC production & execution.</p></div>
+        </div>
+        <div class="event">
+          <img src="images/image52.png" alt="Starcity Night Market" />
+          <div class="meta"><h4>Starcity Night Market</h4><p>Yoma Entity & merchant activation partner.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- KOLs Management -->
+    <div class="reveal">
+      <div class="brands-title" style="margin-top:0">KOLs Management</div>
+      <p style="color:#cfcfcf;font-size:15px;max-width:720px;margin-bottom:24px">
+        Mainly responsible for MC script and management for 3 KOLs across the "Let's Meet Pocket" mall tour.
+      </p>
+
+      <div class="col3">
+        <div class="event">
+          <img src="images/image53.png" alt="Let's Meet Pocket at MM Plaza" />
+          <div class="meta"><h4>Let's Meet Pocket</h4><p>MM Plaza · MC script & KOL management.</p></div>
+        </div>
+        <div class="event">
+          <img src="images/image54.png" alt="Let's Meet Pocket at Junction City" />
+          <div class="meta"><h4>Let's Meet Pocket</h4><p>Junction City · KOL activation.</p></div>
+        </div>
+        <div class="event">
+          <img src="images/image55.png" alt="Let's Meet Pocket at Kan Tar Yar" />
+          <div class="meta"><h4>Let's Meet Pocket</h4><p>Kan Tar Yar · KOL engagement.</p></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ———————————— THANK YOU ———————————— -->
+<footer class="end">
+  <div class="wrap reveal">
+    <div class="orbit">
+      <span class="orbit-label">Creative Portfolio</span>
+      <h2 class="display">Thank <span style="color:#fff">You</span></h2>
+      <div class="star"></div>
+    </div>
+    <div class="sub">For your time and interest</div>
+
+    <div class="legal">
+      © <span id="yr"></span> Elora · Portfolio built in UAE · <a href="#top">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // year in footer
+  var yrEl = document.getElementById('yr');
+  if (yrEl) yrEl.textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

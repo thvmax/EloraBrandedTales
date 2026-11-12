@@ -1,0 +1,9 @@
+# macOS
+.DS_Store
+
+# Raw source footage — far too large for git. The web-ready copies live in /videos
+Supporting Videos/
+
+# Local tooling
+venv/
+_to_delete/

@@ -1,89 +1,50 @@
-# Elora — Creative Portfolio
+# Ei Chaw Myint Mo — Portfolio 2026
 
-A single-page portfolio site built from `Mo_s_Portfolio.pptx`.
+A single-page, responsive portfolio built from the Figma file
+**Mo Social Media Portfolio → V4 — The Showcase**.
 
 ## Stack
 
-Plain HTML + CSS + tiny vanilla JS. No build step. No framework. Ships as a static site.
-
-## Structure
+Plain HTML + CSS + vanilla JS in one file. No build step, no framework.
 
 ```
-elora-portfolio/
-├── index.html       ← the whole site (HTML + CSS + JS inlined)
-├── vercel.json      ← static-site config, caching headers
-├── images/          ← 56 assets extracted from the deck
-└── README.md
+index.html          the whole site (markup, styles, script)
+assets/             hero images, portrait, self-hosted fonts
+videos/             web-optimised MP4s (H.264, 720p, faststart)
+videos/posters/     one JPG poster per video
+images/             older deck assets (a few are reused)
+Supporting Videos/  raw source footage — git-ignored, not deployed
 ```
 
 ## Run locally
 
-Just open `index.html` in a browser — or serve it:
+Videos need a server (they will not stream from `file://` in every browser):
 
 ```bash
-# Python 3
 python3 -m http.server 3000
-
-# or Node (if you have npx)
-npx serve .
+# open http://localhost:3000
 ```
 
-Then visit http://localhost:3000
+## Editing content
 
-## Deploy to Vercel
+All project copy lives in the `STORIES` array near the bottom of `index.html`:
+titles, taglines, scope, deliverables, stats, pills and which videos appear.
+The showreel playlist is the `REEL` array right below it.
 
-**Option 1 — via the Vercel CLI** (fastest):
+- Swap a hero image: replace `assets/hero-*.jpg` (1500×1000 or larger).
+- Swap the portrait: replace `assets/portrait.jpg` (portrait ratio, ~520×720+).
+- Add a video: put `name.mp4` in `videos/` and `name.jpg` in `videos/posters/`,
+  then add `'name'` to a `vids` list.
+
+### Encoding new videos
 
 ```bash
-npm i -g vercel
-cd elora-portfolio
-vercel
+ffmpeg -i input.mp4 -vf "scale=-2:1280" -c:v libx264 -preset medium -crf 22 \
+  -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart videos/name.mp4
+ffmpeg -ss 1.5 -i videos/name.mp4 -frames:v 1 -vf "scale=720:-2" -q:v 4 videos/posters/name.jpg
 ```
 
-Answer the prompts (scope, project name). It will deploy and give you a URL.
+## Deploy
 
-**Option 2 — via GitHub + Vercel dashboard**:
-
-1. Push this folder to a GitHub repo.
-2. Go to https://vercel.com/new
-3. Import the repo. Framework preset: **Other** (or leave as detected).
-4. No build command, no output directory — it's pure static.
-5. Click **Deploy**.
-
-**Option 3 — drag-and-drop**:
-
-1. Open https://vercel.com/new
-2. Drag the `elora-portfolio` folder onto the drop zone.
-3. Deploy.
-
-## Sections
-
-1. **Hero** — Working Experience cover
-2. **About Me**
-3. **Working Experience timeline** — 5 roles, chronological
-4. **Reportage Group** — current role + brand grid
-5. **Poke.Creative Studio** — role + main brands + 4 featured campaigns
-   (Rangoon Tea House · René Mattias · Geon Bae Soju · Printing Bee)
-6. **Blink Marketing Agency** — role + 3 campaigns
-   (Rakuten Viber · Bawdar Beer · Drink Smart, Drive Safe)
-7. **Pocket MM** — role + Yoma Entities + Non-Yoma Merchants + Content Creation + TVC + KOLs
-8. **Thank You** footer
-
-## Hyperlinks preserved
-
-All "CLICK HERE" links from the original deck are active on the campaign tiles — they open in new tabs:
-
-- **Rangoon Tea House** → 3 TikTok videos + 2 LinkedIn recap posts
-- **René Mattias** → Facebook teaser video
-- **Geon Bae Soju** → Poke.Creative Studio Facebook post
-
-## Editing
-
-Everything is in one file (`index.html`). CSS is inside a single `<style>` block at the top — CSS variables for theme live in `:root` and are easy to swap.
-
-Brand palette:
-
-- `--bg` `#0a0a0a`
-- `--pink` `#ff2d6e` (the accent)
-- `--text` `#ffffff`
-# EloraBrandedTales
+Static site — push to GitHub and import in Vercel (framework preset: Other,
+no build command), or run `vercel` in this folder.

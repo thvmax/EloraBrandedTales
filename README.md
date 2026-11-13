@@ -9,10 +9,9 @@ Plain HTML + CSS + vanilla JS in one file. No build step, no framework.
 
 ```
 index.html          the whole site (markup, styles, script)
-assets/             hero images, portrait, self-hosted fonts
+assets/             social preview image, portrait, self-hosted fonts
 videos/             web-optimised MP4s (H.264, 720p, faststart)
 videos/posters/     one JPG poster per video
-images/             older deck assets (a few are reused)
 Supporting Videos/  raw source footage — git-ignored, not deployed
 ```
 
@@ -27,14 +26,20 @@ python3 -m http.server 3000
 
 ## Editing content
 
-All project copy lives in the `STORIES` array near the bottom of `index.html`:
-titles, taglines, scope, deliverables, stats, pills and which videos appear.
-The showreel playlist is the `REEL` array right below it.
+All copy is plain HTML in `index.html`, so it is readable without JavaScript.
 
-- Swap a hero image: replace `assets/hero-*.jpg` (1500×1000 or larger).
-- Swap the portrait: replace `assets/portrait.jpg` (portrait ratio, ~520×720+).
-- Add a video: put `name.mp4` in `videos/` and `name.jpg` in `videos/posters/`,
-  then add `'name'` to a `vids` list.
+- Each project is an `<article class="work">`. The top part is the summary shown
+  on the page; the `<div class="case">` inside it is the case study that opens
+  in the overlay.
+- A case study is split into chapters: each `<section class="ch">` has a title,
+  a paragraph, a short fact list and a rail of films. Luxury Launches has five.
+- Add a film: put `name.mp4` in `videos/` and `name.jpg` in `videos/posters/`,
+  then copy a `<figure class="vc" data-v="name">` block into a rail
+  (add the class `wide` for 16:9).
+- Experience and skills are the `#experience` block. Hero phrases and their
+  colours are the `HERO` array in the script.
+- The social preview tags near the top use the site's full URL; update them if
+  the domain changes.
 
 ### Encoding new videos
 

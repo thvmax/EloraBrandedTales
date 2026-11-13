@@ -9,7 +9,7 @@ Plain HTML + CSS + vanilla JS in one file. No build step, no framework.
 
 ```
 index.html          the whole site (markup, styles, script)
-assets/             social preview image, portrait, self-hosted fonts
+assets/             hero images, portrait, self-hosted fonts
 videos/             web-optimised MP4s (H.264, 720p, faststart)
 videos/posters/     one JPG poster per video
 Supporting Videos/  raw source footage — git-ignored, not deployed
@@ -26,20 +26,15 @@ python3 -m http.server 3000
 
 ## Editing content
 
-All copy is plain HTML in `index.html`, so it is readable without JavaScript.
+All project copy lives in the `W` array near the bottom of `index.html`:
+titles, taglines, overview, ideas, stats and which videos appear. A story with a
+`ch` list (Luxury Launches) is split into chapters in its case study: each
+chapter has a title, a paragraph, a short fact list and its own films.
 
-- Each project is an `<article class="work">`. The top part is the summary shown
-  on the page; the `<div class="case">` inside it is the case study that opens
-  in the overlay.
-- A case study is split into chapters: each `<section class="ch">` has a title,
-  a paragraph, a short fact list and a rail of films. Luxury Launches has five.
-- Add a film: put `name.mp4` in `videos/` and `name.jpg` in `videos/posters/`,
-  then copy a `<figure class="vc" data-v="name">` block into a rail
-  (add the class `wide` for 16:9).
-- Experience and skills are the `#experience` block. Hero phrases and their
-  colours are the `HERO` array in the script.
-- The social preview tags near the top use the site's full URL; update them if
-  the domain changes.
+- Swap a hero image: replace `assets/hero-*.jpg` (1500×1000 or larger).
+- Swap the portrait: replace `assets/portrait.jpg` (portrait ratio, ~520×720+).
+- Add a video: put `name.mp4` in `videos/` and `name.jpg` in `videos/posters/`,
+  then add `'name'` to a `vids` list.
 
 ### Encoding new videos
 

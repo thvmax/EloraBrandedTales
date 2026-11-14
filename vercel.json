@@ -28,5 +28,12 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "/work",
+      "destination": "/#projects",
+      "permanent": false
+    }
   ]
 }

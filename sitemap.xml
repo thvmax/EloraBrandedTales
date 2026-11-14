@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://elora-branded-tales.vercel.app/</loc><lastmod>2026-11-13</lastmod></url>
+  <url><loc>https://elora-branded-tales.vercel.app/</loc><lastmod>2026-11-14</lastmod><priority>1.0</priority></url>
+  <url><loc>https://elora-branded-tales.vercel.app/work/verdana</loc><lastmod>2026-11-14</lastmod><priority>0.8</priority></url>
+  <url><loc>https://elora-branded-tales.vercel.app/work/luxury-launches</loc><lastmod>2026-11-14</lastmod><priority>0.8</priority></url>
+  <url><loc>https://elora-branded-tales.vercel.app/work/reportage-rebrand</loc><lastmod>2026-11-14</lastmod><priority>0.8</priority></url>
+  <url><loc>https://elora-branded-tales.vercel.app/work/the-dot-series</loc><lastmod>2026-11-14</lastmod><priority>0.8</priority></url>
+  <url><loc>https://elora-branded-tales.vercel.app/work/rangoon-tea-house</loc><lastmod>2026-11-14</lastmod><priority>0.8</priority></url>
+  <url><loc>https://elora-branded-tales.vercel.app/work/rene-mattias</loc><lastmod>2026-11-14</lastmod><priority>0.8</priority></url>
 </urlset>

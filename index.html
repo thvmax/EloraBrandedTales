@@ -164,7 +164,7 @@ body::after{content:"";position:fixed;inset:0;z-index:90;pointer-events:none;opa
 .pmeta ul{display:flex;gap:26px;border-top:1px solid rgba(255,255,255,.16);padding-top:14px}
 .pmeta li b{display:block;font:600 clamp(22px,2vw,32px)/1 var(--sans);letter-spacing:-.03em}
 .pmeta li span{display:block;margin-top:8px}
-.pcard{--cw:min(25vw,43vh);position:absolute;left:50%;top:50%;z-index:3;width:var(--cw);aspect-ratio:9/16;margin:calc(var(--cw)*-.89 - 2vh) 0 0 calc(var(--cw)*-.5);border-radius:16px;overflow:hidden;background:linear-gradient(122deg,#1e1714,#3a1f10);will-change:transform;transform:translateY(130vh);box-shadow:0 50px 100px -30px rgba(0,0,0,.8)}
+.pcard{--cw:min(25vw,43vh);display:block;color:inherit;position:absolute;left:50%;top:50%;z-index:3;width:var(--cw);aspect-ratio:9/16;margin:calc(var(--cw)*-.89 - 2vh) 0 0 calc(var(--cw)*-.5);border-radius:16px;overflow:hidden;background:linear-gradient(122deg,#1e1714,#3a1f10);will-change:transform;transform:translateY(130vh);box-shadow:0 50px 100px -30px rgba(0,0,0,.8)}
 .pcard img,.pcard video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .pcard video{opacity:0;transition:opacity .8s ease}.pcard.on video{opacity:1}
 .pcard::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35),transparent 30%,transparent 62%,rgba(0,0,0,.7))}
@@ -172,7 +172,7 @@ body::after{content:"";position:fixed;inset:0;z-index:90;pointer-events:none;opa
 .pcard .a{top:12px}.pcard .b{bottom:12px;align-items:center}
 .pcard .go{width:38px;height:38px;border-radius:50%;background:#fff;color:#0a0807;display:grid;place-items:center;transition:transform .6s var(--ease)}
 .pcard:hover .go{transform:scale(1.12) rotate(45deg)}
-.pcard svg,.x svg{width:14px;height:14px}
+.pcard svg{width:14px;height:14px}
 
 /* ── Experience: sticky stack ── */
 .exp{position:relative;padding:18vh 0 26vh;background:var(--bg)}
@@ -209,46 +209,10 @@ body::after{content:"";position:fixed;inset:0;z-index:90;pointer-events:none;opa
 .cgrid a{background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .7s var(--ease)}
 .cgrid a:hover{background-size:100% 1px}
 
-/* ── Project sheet ── */
-.sheet{position:fixed;inset:0;z-index:70;background:#0c0a09;transform:translateY(102%);transition:transform 1s cubic-bezier(.76,0,.18,1),visibility 0s 1s;overflow-y:auto;overscroll-behavior:contain;visibility:hidden}
-.sheet.open{transform:none;visibility:visible;transition:transform 1s cubic-bezier(.76,0,.18,1)}
-.sheet .top{position:sticky;top:0;z-index:3;display:flex;justify-content:space-between;align-items:center;padding:18px var(--pad);background:linear-gradient(#0c0a09 60%,transparent)}
-.x{width:46px;height:46px;border-radius:50%;background:#fff;color:#0a0807;display:grid;place-items:center;transition:transform .6s var(--ease)}
-.x:hover{transform:rotate(90deg)}.x:active{transform:scale(.94)}
-.sheet .body{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:5vw;padding:4vh var(--pad) 6vh}
-.sheet h2{font:600 clamp(44px,7vw,128px)/.88 var(--sans);letter-spacing:-.035em;text-transform:uppercase}
-.sheet .tg{font-size:clamp(22px,2.4vw,38px);line-height:1.15;letter-spacing:-.02em;margin-top:22px}
-.sheet .txt{align-self:end}
-.sheet .txt h3{font:600 11px/1.4 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--mist);margin:28px 0 10px}
-.sheet .txt p{color:#d8d2cb;max-width:56ch;line-height:1.55}
-.sheet .st{display:flex;gap:36px;margin-top:30px;border-top:1px solid rgba(255,255,255,.16);padding-top:18px}
-.sheet .st b{display:block;font:600 clamp(28px,3vw,48px)/1 var(--sans);letter-spacing:-.03em}
-.sheet{outline:0}
-#rails{padding-bottom:90px}
-.chl{list-style:none;padding:0;margin:8px 0 0;border-top:1px solid rgba(255,255,255,.16)}
-.chl button{display:grid;grid-template-columns:40px minmax(0,1fr) auto;gap:12px;align-items:baseline;width:100%;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.16);text-align:left;transition:padding .6s var(--ease),color .6s var(--ease)}
-.chl button:hover{padding-left:10px;color:var(--o2)}
-.chl .nm{font-size:clamp(17px,1.4vw,22px);letter-spacing:-.015em}
-.ch{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:4vw;align-items:start;margin:9vh 0 0 var(--pad);padding-top:5vh;border-top:1px solid rgba(255,255,255,.16);scroll-margin-top:90px}
-.ch-t .no{display:flex;gap:12px;color:var(--mist)}.ch-t .no b{color:var(--o1);font-weight:600}
-.ch-t h3{font:400 clamp(30px,3.4vw,56px)/1 var(--sans);letter-spacing:-.03em;margin-top:18px}
-.ch-t h3 .script{display:block}
-.ch-t p{margin-top:20px;max-width:46ch;color:#d8d2cb;line-height:1.55}
-.ch-t dl{margin:26px 0 0;border-top:1px solid rgba(255,255,255,.16)}
-.ch-t dl div{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.16)}
-.ch-t dt{color:var(--mist)}.ch-t dd{margin:0;text-align:right}
-.ch .rail{padding:0 var(--pad) 0 0}.ch .vc{height:min(62vh,580px)}
-.rail{display:flex;gap:16px;overflow-x:auto;padding:0 var(--pad) 0;scroll-snap-type:x proximity;scrollbar-width:none}
-.rail::-webkit-scrollbar{display:none}
-.vc{position:relative;flex:none;height:min(68vh,640px);aspect-ratio:9/16;border-radius:14px;overflow:hidden;background:linear-gradient(122deg,#1e1714,#3a1f10);scroll-snap-align:start;opacity:0;transform:translateY(60px);transition:opacity .9s ease,transform 1.1s var(--ease);transition-delay:calc(.35s + var(--i)*70ms)}
-.vc.wide{aspect-ratio:16/9}
-.sheet.open .vc{opacity:1;transform:none}
-.vc img,.vc video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.vc video{opacity:0}.vc.play video{opacity:1}
-.vc .pl{position:absolute;left:14px;right:14px;bottom:14px;display:flex;align-items:center;gap:10px;z-index:2;transition:opacity .4s;text-align:left}
-.vc .pl i{width:40px;height:40px;border-radius:50%;background:#fff;display:grid;place-items:center}
-.vc .pl i::after{content:"";border-left:10px solid #0a0807;border-block:6px solid transparent;margin-left:3px}
-.vc.play .pl{opacity:0;pointer-events:none}
+/* ── Page-change curtain (the case studies open as their own pages) ── */
+.curtain{position:fixed;inset:0;z-index:70;background:#0c0a09;transform:translateY(102%);transition:transform .8s cubic-bezier(.76,0,.18,1);pointer-events:none}
+.curtain.on{transform:none;pointer-events:auto}.curtain.nt{transition:none}
+.ret .curtain{transform:none;transition:none}.ret .intro{display:none}
 
 @media (max-width:860px){
   .bar-nav{grid-template-columns:1fr auto;font-size:14px}.bar-nav .l{display:none}.bar-nav nav{justify-self:start}
@@ -260,7 +224,7 @@ body::after{content:"";position:fixed;inset:0;z-index:90;pointer-events:none;opa
   .hero .cue{display:none}
   .about .cols{grid-template-columns:1fr}.about .nums{justify-content:flex-start}
   .hud.ml,.hud.mr{display:none}
-  .pcard{--cw:min(50vw,36vh);margin-top:calc(var(--cw)*-.89 - 3vh)}
+  .pcard{--cw:clamp(120px,calc((91vh - 26.4vw - 262px)/1.78),50vw);top:calc(9vh + 26.4vw + 18px);margin-top:0}
   .ptitle{bottom:auto;top:9vh;font-size:15vw}
   .pmeta{left:var(--pad);right:var(--pad);width:auto;bottom:76px}
   .pmeta .tg{font-size:19px;margin:6px 0 10px}.pmeta ul{padding-top:10px;gap:18px}
@@ -268,21 +232,25 @@ body::after{content:"";position:fixed;inset:0;z-index:90;pointer-events:none;opa
   .job{grid-template-columns:1fr auto;top:calc(10px + var(--i)*50px);min-height:42vh}
   .job>div:nth-child(2){grid-column:1/-1;margin-top:18px}.job .when{grid-row:1;grid-column:2}
   .cgrid{grid-template-columns:1fr 1fr}.cgrid>div:nth-child(2){grid-column:1/-1;grid-row:2}
-  .sheet .body{grid-template-columns:1fr}.vc,.ch .vc{height:60vh}
-  .ch{grid-template-columns:1fr;gap:28px;margin:7vh var(--pad) 0}.ch .rail{margin-right:calc(var(--pad)*-1)}
+}
+@media (max-width:380px){
+  .bar-nav{font-size:13px;gap:10px}
+  .pcard{--cw:clamp(110px,calc((91vh - 26.4vw - 300px)/1.78),50vw)}
 }
 @media (prefers-reduced-motion:reduce){
   .intro{display:none}.hl .mask i,.contact .ln>span{transform:none!important;transition:none}.film .in{clip-path:none!important;transform:none!important}.hearts{display:none}
 }
 </style>
+<script>try{if(sessionStorage.getItem('elora-last')!==null)document.documentElement.classList.add('ret')}catch(e){}</script>
 <noscript><style>
 body.lock{overflow:auto}.intro{display:none}.bar-nav{transform:none}.hl .mask i{transform:none}.film .in{clip-path:none;transform:none}.hero .lede>*{opacity:1}
 .hero{height:auto}.hero .pin{position:relative}.hero .shade,.about{display:none}
 .projects .pin{position:relative;height:auto;padding:14vh var(--pad)}.projects .veil,.hud{display:none}
-.nojs h2{font:600 clamp(28px,4vw,56px)/1 var(--sans);letter-spacing:-.03em;text-transform:uppercase;margin:6vh 0 10px}.nojs p{max-width:60ch;color:#d8d2cb}
+.nojs h2{font:600 clamp(28px,4vw,56px)/1 var(--sans);letter-spacing:-.03em;text-transform:uppercase;margin:6vh 0 10px}.nojs a{text-decoration:underline;text-underline-offset:.12em;text-decoration-thickness:1px}.nojs p{max-width:60ch;color:#d8d2cb}
 </style></noscript>
 </head>
 <body class="lock">
+<div class="curtain" id="curtain" aria-hidden="true"></div>
 <div class="prog" id="prog"></div>
 
 <div class="intro" id="intro" aria-hidden="true">
@@ -293,7 +261,7 @@ body.lock{overflow:auto}.intro{display:none}.bar-nav{transform:none}.hl .mask i{
 
 <header class="bar-nav">
   <div class="l"><i class="dot"></i><span>Ei Chaw Myint Mo</span><span class="mist">— Social Media Strategist</span></div>
-  <nav aria-label="Primary"><a href="#projects">Projects,</a> <a href="#experience">Experience,</a> <a href="#about">About</a></nav>
+  <nav aria-label="Primary"><a href="#projects">Projects,</a><!--insights-link--><!--/insights-link--> <a href="#experience">Experience,</a> <a href="#about">About</a></nav>
   <div class="r"><a href="#contact">Contact</a></div>
 </header>
 
@@ -331,14 +299,14 @@ body.lock{overflow:auto}.intro{display:none}.bar-nav{transform:none}.hl .mask i{
     <div class="veil"></div>
     <div class="hud tl caps"><i></i><span id="count">[01—06]</span></div>
     <div class="hud tr caps mist">Scroll</div>
-    <noscript><div class="nojs">
-      <h2>Verdana</h2><p>From square footage to a sense of belonging. Community-first storytelling for Reportage’s township. +11M views, +20K interactions, +5K followers gained.</p>
-      <h2>Luxury Launches</h2><p>Panorama by ELIE SAAB, Brabus Island, a project reveal in Abu Dhabi, four international branch openings and live exhibition coverage at ADIS and ACRES. 389K+ exhibition views, 10K followers from scratch.</p>
-      <h2>Reportage Rebrand</h2><p>Social media guidelines for HQ and 19 countries, and the rollout series. +442K views.</p>
-      <h2>The Dot Series</h2><p>A leadership podcast planned to live twice: in full, and as a run of clips. 59K views, 8K interactions.</p>
-      <h2>Rangoon Tea House</h2><p>A 10th-anniversary TikTok campaign for a Yangon icon. 1.8M organic reach, 2.3M organic views.</p>
-      <h2>Rene Mattias</h2><p>A short-film concept for a fashion brand, carried by a mini-series and 14 short reels.</p>
-    </div></noscript>
+    <noscript><div class="nojs"><!--work-links-->
+      <h2><a href="work/verdana">Verdana</a></h2><p>From square footage to a Sense of Belonging. How a township launch moved from square footage to belonging: community-first social storytelling for Reportage’s Verdana, with 11M+ views.</p>
+      <h2><a href="work/luxury-launches">Luxury Launches</a></h2><p>Couture living meets Horsepower. Five luxury real estate launches for Reportage, from Panorama by ELIE SAAB to Brabus Island: teaser, reveal, on-ground coverage and recap.</p>
+      <h2><a href="work/reportage-rebrand">Reportage Rebrand</a></h2><p>One voice, Zero drift. Social media guidelines for HQ and 19 countries, and the rollout series that introduced the new Reportage brand with one voice in every market.</p>
+      <h2><a href="work/the-dot-series">The Dot Series</a></h2><p>Long-form thinking, Short-form living. A leadership podcast planned to live twice: once in full, and again as a run of short clips built to stop the scroll.</p>
+      <h2><a href="work/rangoon-tea-house">Rangoon Tea House</a></h2><p>Ten years of nostalgia, poured into one teacup. A 10th-anniversary TikTok campaign for Yangon’s Rangoon Tea House: nostalgia as a format, with 2.3M organic views and a 70% visibility lift.</p>
+      <h2><a href="work/rene-mattias">Rene Mattias</a></h2><p>A fashion film the feed didn’t skip. A short-film concept for fashion brand Rene Mattias, carried by a brand mini-series and 14 short reels, with a 35% visibility lift.</p>
+    <!--/work-links--></div></noscript>
   </div>
 </section>
 
@@ -371,60 +339,16 @@ body.lock{overflow:auto}.intro{display:none}.bar-nav{transform:none}.hl .mask i{
 </section>
 </main>
 
-<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Project" tabindex="-1">
-  <div class="top"><span class="caps mist" id="shno"></span><button class="x" id="shx" aria-label="Close project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 5l14 14M19 5 5 19"/></svg></button></div>
-  <div class="body"><div><h2 id="sht"></h2><p class="tg" id="shg"></p></div><div class="txt" id="shb"></div></div>
-  <div id="rails"></div>
-</div>
-
+<script src="data/work.js"></script>
 <script>
 (() => {
 const V='videos/', P='videos/posters/', $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v)), ss=(a,b,v)=>{const t=clamp((v-a)/(b-a));return t*t*(3-2*t)}, lerp=(a,b,t)=>a+(b-a)*t;
 const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');
-const seq=(p,n,l)=>Array.from({length:n},(_,i)=>[`${p}-${i+1}`,`${l} ${String(i+1).padStart(2,'0')}`]);
 
-/* ── Content: edit projects here ── */
-const W=[
- {t:'Verdana',tags:'Beyond Takes Shape · Community',a:'From square footage to a',b:'Sense of Belonging',yr:'2025 · Reportage Group',img:'township',cover:'verdana-1',
-  o:'Verdana is Reportage’s community township. Built on the ‘Beyond Takes Shape’ platform, the content moved the conversation from square footage to belonging — so people could picture a life there, not just a purchase.',
-  i:'Lifestyle-first storytelling: resident moments, neighbourhood rhythms and community activations, cut into feed-native reels with hooks in the first second.',
-  st:[['+11M','Views'],['+20K','Interactions'],['+5K','Followers gained']],v:seq('verdana',2,'Reel')},
- {t:'Luxury Launches',tags:'Panorama by ELIE SAAB · Brabus',a:'Couture living meets',b:'Horsepower',yr:'2025 — 2026 · Reportage Group',img:'silk-car',cover:'launch-1',
-  o:'Launch campaigns for Reportage’s luxury collaborations, four international branch openings and live exhibition coverage — each rolled out as a localised social moment: teaser, countdown, on-ground coverage and recap.',
-  i:'Localise the voice, not the brand: market-specific hooks, native-language captions, and real-time stories from the exhibition floor.',
-  st:[['389K+','Exhibition views'],['10K','Followers from scratch'],['4','International branches']],
-  ch:[
-   {t:'Panorama',s:'by ELIE SAAB',k:'Sea Breeze, Baku',p:'A couture-branded residence at Sea Breeze on the Caspian coast. The rollout ran in sequence: a quiet material teaser, the name reveal, the groundbreaking, launch night, and a destination film that sells Baku before it sells the building.',
-    m:[['Market','Azerbaijan'],['Rollout','Teaser · Reveal · Event · Film']],v:[['launch-3','Launch film',1],['launch-4','Teaser & reveal'],['intl-3','Groundbreaking'],['intl-6','Launch night'],['launch-5','Sea Breeze — destination']]},
-   {t:'Brabus',s:'Island',k:'Launch night',p:'Automotive attitude applied to real estate. Coverage followed the night as it unfolded: the car on arrival, the stage reveal, the keynote and the room, cut fast enough to match the brand.',
-    m:[['Format','Event recap reel'],['Rollout','Live stories · Recap']],v:[['launch-2','Launch night']]},
-   {t:'Project reveal,',s:'Abu Dhabi',k:'Abu Dhabi',p:'A reveal built for the phones in the room: the countdown, the model unveiling and the crowd’s first reaction, published while the event was still running.',
-    m:[['Market','UAE'],['Format','On-ground coverage']],v:[['launch-1','Reveal night']]},
-   {t:'International',s:'markets',k:'4 branches',p:'Four branch openings, one playbook. Each market got its own hook and its own language, from “Niyə Azərbaycan?” in Baku to the Africa series, while the brand stayed recognisably Reportage.',
-    m:[['Markets','Azerbaijan · Africa · Albania · Europe'],['Result','10K followers from scratch']],v:[['intl-4','Niyə Azərbaycan?'],['intl-2','Reportage Heights'],['intl-1','Africa'],['intl-5','Market film']]},
-   {t:'Exhibitions:',s:'ADIS & ACRES',k:'ADIS · ACRES',p:'Real-time coverage from the exhibition floor: stand walk-throughs, visitor moments and a presenter-led recap, posted the same day.',
-    m:[['Format','Live story · Recap'],['Result','389K+ exhibition views']],v:[['adis','ADIS — live story'],['acres','ACRES — recap']]}
-  ]},
- {t:'Reportage Rebrand',tags:'19 Countries · One Voice',a:'One voice,',b:'Zero drift',yr:'2025 — 2026 · Reportage Group',img:'guidelines',cover:'rebrand-3',
-  o:'For the brand refresh, I authored standardized social media guidelines spanning HQ and 19 countries — built on the master brand guideline to keep one voice in every market — and led the rollout series from pre-launch teasers to live event coverage.',
-  i:'‘Share Your Story’ invited homeowners and partners to tell their own Reportage moments on camera — UGC cut into reels, plus a winner documentary.',
-  st:[['+442K','Views'],['+1.9K','Interactions'],['19','Countries']],v:[...seq('rebrand',3,'Rollout'),['goldbar-1','Share Your Story — documentary'],['goldbar-2','Share Your Story — reel']]},
- {t:'The Dot Series',tags:'Podcast · Thought Leadership',a:'Long-form thinking,',b:'Short-form living',yr:'2025 — 2026 · Reportage Group',img:'mic',cover:'podcast-1',
-  o:'A podcast where leaders and guests unpack real estate, ambition and the city. Every episode was planned to live twice — once in full, and again as a run of scroll-stopping clips.',
-  i:'One episode, ten moments: pull the sharpest 30 seconds, add captions and a hook, then let the clips do the reach while the full episode builds the depth.',
-  st:[['59K','Views'],['8K','Interactions'],['1K','Followers gained']],v:seq('podcast',3,'Clip')},
- {t:'Rangoon Tea House',tags:'Poke Creative Studio · TikTok',a:'Ten years of nostalgia, poured into',b:'one teacup',yr:'2024 — 2025 · Poke Creative Studio',img:'tea',cover:'rth-3',
-  o:'A Yangon icon with a decade of memories. The 10th-anniversary campaign turned the brand’s nostalgia into a TikTok series and LinkedIn recaps — content that felt like coming home, one cup at a time.',
-  i:'Nostalgia as a format: familiar flavours, old-school moments and a modern edit — native to TikTok, recapped for a professional audience on LinkedIn.',
-  st:[['70%','Visibility lift'],['1.8M','Organic reach'],['2.3M','Organic views']],v:seq('rth',5,'TikTok')},
- {t:'Rene Mattias',tags:'Fashion Film · Teaser',a:'A fashion film the feed',b:'didn’t skip',yr:'2024 · Poke Creative Studio',img:'silk',cover:'rene-1',
-  o:'Ideated an out-of-the-box short-film concept for the fashion brand, working across production and influencer management — powered by a brand mini-series and a run of short reels.',
-  i:'Plan for the edit on set: capture vertical first, grab the hooks, the details and the candid in-between moments the feed loves.',
-  st:[['35%','Visibility lift'],['14','Short reels'],['1','Brand mini-series']],v:seq('rene',5,'Reel')}
-];
-W.forEach(w=>{ if(w.ch) w.v=w.ch.flatMap(c=>c.v); });
+/* ── Content: projects live in data/work.js ── */
+const W=WORK;
 const N=W.length, n2=i=>String(i+1).padStart(2,'0');
 
 /* ── build project stage ── */
@@ -436,22 +360,22 @@ const L=W.map((w,i)=>{
   const ti=document.createElement('h2'); ti.className='ptitle'; ti.innerHTML=w.t.replace(' ','<br>'); stage.append(ti);
   const me=document.createElement('div'); me.className='pmeta';
   me.innerHTML=`<p class="caps mist">${esc(w.tags)}</p><p class="tg">${esc(w.a)}<span class="script grad">${esc(w.b)}</span></p><ul>${w.st.map(([v,l])=>`<li><b>${v}</b><span class="caps mist">${esc(l)}</span></li>`).join('')}</ul>`; stage.append(me);
-  const c=document.createElement('button'); c.className='pcard'; c.setAttribute('aria-label',`Open ${w.t} — ${w.v.length} videos`);
-  c.innerHTML=`<img src="${P}${w.cover}.jpg" alt="${esc(w.t)}: social media campaign by Ei Chaw Myint Mo" loading="lazy"><video muted playsinline loop preload="none"></video><span class="a caps"><span>${esc(w.t)}</span><span>${n2(i)}</span></span><span class="b caps"><span>${w.v.length} videos</span><span class="go">${arrow}</span></span>`;
-  c.addEventListener('click',()=>openSheet(i)); stage.append(c);
+  const c=document.createElement('a'); c.className='pcard'; c.href=`work/${w.slug}`; c.setAttribute('aria-label',`${w.t}: read the case study, ${w.v.length} films`);
+  c.innerHTML=`<img src="${P}${w.cover}.jpg" alt="${esc(w.t)}: social media campaign by Ei Chaw Myint Mo" loading="lazy"><video muted playsinline loop preload="none"></video><span class="a caps"><span>${esc(w.t)}</span><span>${n2(i)}</span></span><span class="b caps"><span>${w.v.length} films</span><span class="go">${arrow}</span></span>`;
+  stage.append(c);
   return {bd,ti,me,c,vid:$('video',c)};
 });
 
 /* ── smooth "slow" scroll (wheel only; touch and keyboard stay native) ── */
-let target=scrollY, cur=scrollY, vel=0, locked=true, sheetOpen=false;
+let target=scrollY, cur=scrollY, vel=0, locked=true, sheetOpen=false; /* sheetOpen: true while leaving for another page */
 const maxS=()=>document.documentElement.scrollHeight-innerHeight;
 if(!reduce) addEventListener('wheel',e=>{
   if(e.ctrlKey||sheetOpen) return; e.preventDefault(); if(locked) return;
   const d=e.deltaMode===1?e.deltaY*32:e.deltaY; target=clamp(target+d*.85,0,maxS());
 },{passive:false});
+const yFor=el=>{ let y=el.getBoundingClientRect().top+scrollY; if(el.id==='about') y=$('#top').offsetTop+innerHeight*1.5; if(el.id==='projects') y=prTop+prLen*(.71/(N-.18)); return y; };
 $$('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const el=$(a.getAttribute('href')); if(!el) return; e.preventDefault();
-  let y=el.getBoundingClientRect().top+scrollY; if(el.id==='about') y=$('#top').offsetTop+innerHeight*1.5; if(el.id==='projects') y+=innerHeight*.4;
-  if(reduce) scrollTo(0,y); else target=clamp(y,0,maxS());}));
+  const y=yFor(el); if(reduce) scrollTo(0,y); else target=clamp(y,0,maxS());}));
 
 /* ── metrics ── */
 const hc=$('#film'); let vh=innerHeight, vw=innerWidth, heroTop=0, heroLen=1, prTop=0, prLen=1, hS=1;
@@ -527,7 +451,7 @@ function frame(){
         l.c.style.transform=`translate3d(0,${ty}vh,0) rotateX(${rx}deg) rotate(${rz}deg) scale(${sc})`;
         l.c.style.pointerEvents=i===a?'auto':'none';
       });
-      if(a!==active){ active=a; count.textContent=`[${n2(a)}—0${N}]`;
+      if(a!==active){ active=a; count.textContent=`[${n2(a)}—0${N}]`; prefetch(W[a].slug);
         L.forEach((l,i)=>{ if(i===a){ if(!l.vid.src) l.vid.src=`${V}${W[i].cover}.mp4`; if(!reduce&&!sheetOpen) l.vid.play().then(()=>l.c.classList.add('on')).catch(()=>{}); } else { l.vid.pause(); l.c.classList.remove('on'); } }); }
     } else if(active>=0){ L[active].vid.pause(); active=-1; }
     lastY=y;
@@ -538,36 +462,30 @@ function frame(){
 
 new IntersectionObserver(([e],o)=>{ if(e.isIntersecting){ e.target.classList.add('in'); o.disconnect(); } },{threshold:.3}).observe($('#contact'));
 
-/* ── project sheet ── */
-const sheet=$('#sheet'), rail=$('#rails'); let opener=null;
-const vcs=(v,o=0)=>v.map(([id,l,wide],k)=>`<button class="vc${wide?' wide':''}" style="--i:${k+o}" data-v="${id}" aria-label="Play ${esc(l)}"><img src="${P}${id}.jpg" alt="${esc(l)}" loading="lazy"><video playsinline preload="none"></video><span class="pl caps"><i></i>${esc(l)}</span></button>`).join('');
-function stopRail(){ $$('.vc',rail).forEach(c=>{ $('video',c).pause(); c.classList.remove('play'); }); }
-function openSheet(i){ const w=W[i]; opener=document.activeElement;
-  $('#shno').textContent=`Story ${n2(i)} — ${w.yr}`; $('#sht').innerHTML=w.t.replace(' ','<br>');
-  $('#shg').innerHTML=`${esc(w.a)} <span class="script grad">${esc(w.b)}</span>`;
-  $('#shb').innerHTML=`<h3>Project overview</h3><p>${esc(w.o)}</p><h3>Ideas</h3><p>${esc(w.i)}</p><ul class="st">${w.st.map(([v,l])=>`<li><b>${v}</b><span class="caps mist">${esc(l)}</span></li>`).join('')}</ul>`
-    +(w.ch?`<h3>${w.ch.length} launches</h3><ol class="chl">${w.ch.map((c,k)=>`<li><button data-ch="${k}"><span class="caps mist">${n2(k)}</span><span class="nm">${esc(c.t.replace(/[,:]$/,''))} ${esc(c.s)}</span><span class="caps mist">${c.v.length} ${c.v.length>1?'films':'film'}</span></button></li>`).join('')}</ol>`:'');
-  rail.innerHTML=w.ch?w.ch.map((c,k)=>`<section class="ch" id="ch${k}"><div class="ch-t"><p class="no caps"><b>${n2(k)}</b><span>${esc(c.k)}</span></p><h3>${esc(c.t)}<span class="script grad">${esc(c.s)}</span></h3><p>${esc(c.p)}</p><dl>${c.m.map(([a,b])=>`<div><dt class="caps">${esc(a)}</dt><dd>${esc(b)}</dd></div>`).join('')}</dl></div><div class="rail">${vcs(c.v,k?0:0)}</div></section>`).join(''):`<div class="rail">${vcs(w.v)}</div>`;
-  $$('.rail',rail).forEach(x=>x.scrollLeft=0); sheet.scrollTop=0; sheetOpen=true; sheet.classList.add('open'); document.body.classList.add('lock');
-  L.forEach(l=>l.vid.pause()); hv.pause(); sheet.focus({preventScroll:true});
-}
-function closeSheet(){ stopRail(); sheetOpen=false; sheet.classList.remove('open'); document.body.classList.remove('lock'); cur=target=scrollY; if(active>=0&&!reduce) L[active].vid.play().catch(()=>{}); if(opener&&opener.focus) opener.focus({preventScroll:true}); }
-sheet.addEventListener('click',e=>{ const j=e.target.closest('[data-ch]'); if(j){ $('#ch'+j.dataset.ch).scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'}); return; }
-  const c=e.target.closest('.vc'); if(!c||c.classList.contains('play')) return; const v=$('video',c);
-  stopRail(); if(!v.src) v.src=`${V}${c.dataset.v}.mp4`; v.controls=true; c.classList.add('play'); v.play().catch(()=>{}); });
-rail.addEventListener('wheel',e=>{ const rl=e.target.closest('.rail'); if(!rl) return; if(Math.abs(e.deltaY)>Math.abs(e.deltaX)){ const at=rl.scrollLeft, mx=rl.scrollWidth-rl.clientWidth; if(mx>1&&((e.deltaY>0&&at<mx-1)||(e.deltaY<0&&at>1))){ rl.scrollLeft+=e.deltaY; e.preventDefault(); } } },{passive:false});
-$('#shx').addEventListener('click',closeSheet);
-addEventListener('keydown',e=>{ if(!sheetOpen) return; if(e.key==='Escape') return closeSheet();
-  if(e.key==='Tab'){ const f=$$('button',sheet).filter(el=>el.offsetParent); if(!f.length) return; const a=document.activeElement, first=f[0], last=f[f.length-1];
-    if(e.shiftKey&&(a===first||a===sheet)){ e.preventDefault(); last.focus(); } else if(!e.shiftKey&&a===last){ e.preventDefault(); first.focus(); } else if(!sheet.contains(a)){ e.preventDefault(); first.focus(); } } });
+/* ── leaving for a case study: the dark sheet rises, then the page loads on the same colour ── */
+const curtain=$('#curtain'), fetched=new Set();
+function prefetch(slug){ if(fetched.has(slug)) return; fetched.add(slug); const l=document.createElement('link'); l.rel='prefetch'; l.href=`work/${slug}`; document.head.append(l); }
+document.addEventListener('click',e=>{ const a=e.target.closest('a[href]'); if(!a||e.button||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey) return;
+  const href=a.getAttribute('href'); if(!/^(work\/|insights)/.test(href)||reduce) return;
+  e.preventDefault(); sheetOpen=true; curtain.classList.add('on'); L.forEach(l=>l.vid.pause()); hv.pause(); setTimeout(()=>{ location.href=href; },820); });
+const lift=()=>{ sheetOpen=false; curtain.classList.remove('on'); cur=target=scrollY; if(active>=0&&!reduce) L[active].vid.play().catch(()=>{}); };
+addEventListener('pageshow',e=>{ if(e.persisted){ try{ sessionStorage.removeItem('elora-last'); }catch(x){} lift(); } });
 
 /* ── intro ── */
 const intro=$('#intro'), num=$('#num'), ibar=$('#ibar');
 function start(){ locked=false; document.body.classList.remove('lock'); document.body.classList.add('ready'); cur=target=scrollY;
   phrase(0); if(!reduce) setTimeout(cycle,2900);
   setTimeout(()=>{ requestAnimationFrame(tickViews); heart(); },1500); }
+let last=null; try{ last=sessionStorage.getItem('elora-last'); sessionStorage.removeItem('elora-last'); }catch(e){}
 measure(); requestAnimationFrame(frame);
-if(reduce){ start(); }
+if(reduce||last!==null){
+  intro.remove(); const i=W.findIndex(w=>w.slug===last), h=location.hash.length>1&&document.getElementById(location.hash.slice(1));
+  const story=i>=0&&(!h||h.id==='projects'), y=story?prTop+prLen*((i+.71)/(N-.18)):h?yFor(h):null;
+  if(story&&h) history.replaceState(null,'',location.pathname);
+  if(y!==null){ history.scrollRestoration='manual'; scrollTo(0,y); }
+  curtain.classList.add('on','nt'); document.documentElement.classList.remove('ret'); start();
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{ curtain.classList.remove('nt'); lift(); }));
+}
 else{
   scrollTo(0,0); const t0=performance.now(), dur=2300; let loaded=false;
   Promise.race([Promise.all([document.fonts.ready,new Promise(r=>{const im=$('#film img'); if(im.complete) r(); else { im.addEventListener('load',r); im.addEventListener('error',r); }})]),new Promise(r=>setTimeout(r,4500))]).then(()=>loaded=true);
